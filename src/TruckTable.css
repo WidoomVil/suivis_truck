@@ -1,0 +1,375 @@
+/* ===== Container & header ===== */
+.truck-container {
+  width: 1880px;
+  height: 100vh;
+  overflow: hidden;
+  padding: 10px;
+  font-family: Arial, sans-serif;
+}
+
+.truck-title { 
+  margin: 0; 
+  font-weight: bold; 
+  color: #333; 
+  text-align: center; 
+  flex: 1; 
+}
+
+.slider-bar { 
+  display: flex; 
+  gap: 8px; 
+  align-items: center; 
+  margin-bottom: 8px; 
+}
+
+.slider-bar button {
+  padding: 6px 12px;
+  background: #4da6ff;
+  border: 1px solid #000;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+
+.slider-bar button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.slider-bar button:hover:not(:disabled) {
+  background: #3d8fe6;
+}
+
+.slider-info { 
+  margin-left: 12px; 
+  font-size: 12px; 
+  opacity: 0.7; 
+}
+
+/* ===== Message d'erreur ===== */
+.error-message {
+  background-color: #f44336;
+  color: white;
+  padding: 12px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* ===== Tableau statut ===== */
+.truck-table { 
+  border-collapse: collapse; 
+  width: 100%; 
+  table-layout: fixed; 
+}
+
+.truck-table th {
+  border: 1px solid #000; 
+  padding: 6px 8px; 
+  text-align: center; 
+  vertical-align: middle;
+  background-color: #4da6ff; 
+  color: #000; 
+  font-weight: bold; 
+  white-space: normal; 
+  word-break: break-word;
+}
+
+.truck-table td {
+  border: 1px solid #000; 
+  padding: 6px 8px; 
+  vertical-align: top; 
+  overflow-wrap: break-word; 
+  word-break: break-word;
+}
+
+/* Largeurs colonnes */
+.col-Unité { width: 75px; }
+.col-DATE { width: 70px; }
+.col-Date-Réparation { width: 105px; white-space: normal; }
+.col-Garage { width: 80px; }
+.col-Complétée { width: 100px; }
+.col-Prochain-Rendez-vous { width: 120px; white-space: normal; }
+.col-Disponible { width: 100px; }
+.col-Plainte, .col-Note { width: auto; white-space: normal; text-align: left; }
+
+/* Alternance des lignes */
+.row-alt {
+  background-color: #f9f9f9;
+}
+
+/* Statuts */
+.row-unavailable { 
+  background-color: #f44336 !important; 
+  color: #fff; 
+}
+
+.row-unavailable td { 
+  background-color: inherit !important; 
+  color: inherit !important; 
+  border-color: #c0352a; 
+}
+
+.row-unavailable td.col-Unité { 
+  background-color: inherit !important; 
+  color: inherit !important; 
+}
+
+.disponible-oui { 
+  background-color: #4caf50; 
+  color: #fff; 
+  font-weight: bold; 
+  text-align: center; 
+}
+
+.disponible-non { 
+  background-color: #f44336; 
+  color: #fff; 
+  font-weight: bold; 
+  text-align: center; 
+}
+
+/* Colonne Unité (bleu foncé, texte blanc) */
+.truck-table th.col-Unité, 
+.truck-table td.col-Unité { 
+  background-color: #2e7da9; 
+  color: #fff; 
+  font-weight: bold; 
+}
+
+.truck-table td.col-Unité { 
+  border-left-color: #1f5876; 
+  border-right-color: #1f5876; 
+}
+
+/* ===== Footer: dernière mise à jour ===== */
+.footer-bar { 
+  position: sticky; 
+  bottom: 0; 
+  display: flex; 
+  justify-content: flex-end; 
+  width: 100%; 
+  background: #fff; 
+  padding-top: 6px; 
+}
+
+.last-updated {
+  font-size: 12px; 
+  line-height: 1.2; 
+  color: #3a3a00; 
+  opacity: 0.95;
+  background: #ffef99; 
+  border: 1px solid #e6d463; 
+  padding: 3px 10px; 
+  margin-right: 10px; 
+  border-radius: 4px;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.04) inset;
+}
+
+.pager { 
+  margin-top: 8px; 
+  text-align: center; 
+  font-size: 12px; 
+}
+
+/* ===== Slide Planning (schedule.csv) ===== */
+.schedule-container { 
+  width: 100%; 
+  height: 100%;
+  overflow-y: auto;
+}
+
+.schedule-header {
+  text-align: center; 
+  font-weight: bold; 
+  font-size: 18px; 
+  margin-bottom: 10px;
+  background: #007BFF; 
+  color: white; 
+  padding: 8px 16px; 
+  border: 1px solid #000;
+  border-radius: 4px;
+}
+
+.schedule-table { 
+  border-collapse: collapse; 
+  width: 100%; 
+  table-layout: fixed; 
+}
+
+.schedule-table th, 
+.schedule-table td {
+  border: 1px solid #000; 
+  padding: 6px 8px; 
+  vertical-align: middle; 
+  overflow-wrap: break-word; 
+  word-break: break-word;
+}
+
+.schedule-table th { 
+  background: #4da6ff; 
+  font-weight: bold; 
+  color: #000;
+}
+
+/* Fond uniforme pour le schedule */
+.schedule-table tr td {
+  background-color: #fff;
+  color: #000;
+}
+
+/* Colonne Fournisseur (bleu foncé + bordures verticales épaisses) */
+.schedule-table th.col-Fournisseur {
+  background-color: #2e7da9; 
+  color: #fff;
+  font-weight: bold;
+  border-left: 2px solid #000;
+  border-right: 2px solid #000;
+  width: 150px;
+}
+
+/* Seulement les cellules NON VIDES ont le fond bleu */
+.schedule-table td.col-Fournisseur:not(:empty) {
+  background-color: #2e7da9; 
+  color: #fff;
+  font-weight: bold;
+  border-left: 2px solid #000;
+  border-right: 2px solid #000;
+  text-align: center;
+  border-top: 3px solid #000;
+}
+
+/* Cellules vides des fournisseurs = fond transparent/blanc */
+.schedule-table td.col-Fournisseur:empty {
+  background-color: transparent;
+  border-left: 2px solid #000;
+  border-right: 2px solid #000;
+}
+
+/* Séparation visuelle entre fournisseurs */
+.schedule-table tbody tr.supplier-first-row {
+  border-top: 5px double #000;
+}
+
+.schedule-table tbody tr.supplier-first-row td {
+  border-top: 5px double #000;
+}
+
+/* Alternance de fond par fournisseur */
+.schedule-table tbody tr.supplier-group-even {
+  background-color: #f5f5f5;
+}
+
+.schedule-table tbody tr.supplier-group-even td:not(.col-Fournisseur):not(.schedule-col-label) {
+  background-color: #f5f5f5;
+}
+
+/* Colonne Jour (label central) avec couleurs alternées */
+.schedule-col-label {
+  font-weight: bold;
+  text-align: center;
+  width: 130px;
+  font-size: 15px;
+}
+
+/* Couleurs différentes par jour - VERSION VIVE POUR TV */
+.schedule-col-label.day-lundi {
+  background-color: #fff176; /* Jaune vif */
+  color: #000;
+  font-weight: bold;
+}
+
+.schedule-col-label.day-mardi {
+  background-color: #64b5f6; /* Bleu clair vif */
+  color: #000;
+  font-weight: bold;
+}
+
+.schedule-col-label.day-mercredi {
+  background-color: #ba68c8; /* Mauve vif */
+  color: #fff;
+  font-weight: bold;
+}
+
+.schedule-col-label.day-jeudi {
+  background-color: #81c784; /* Vert vif */
+  color: #000;
+  font-weight: bold;
+}
+
+.schedule-col-label.day-vendredi {
+  background-color: #ffb74d; /* Orange vif */
+  color: #000;
+  font-weight: bold;
+}
+
+/* Mise en évidence de la journée actuelle */
+.schedule-col-label.current-day {
+  border: 5px solid #000 !important;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
+  }
+}
+
+/* Toute la ligne de la journée actuelle - BORDURE UNIFORME */
+.schedule-table tbody tr.current-day-row td.schedule-col-unit {
+  font-weight: bold !important;
+  font-size: 16px !important;
+  border-top: 3px solid #000 !important;
+  border-bottom: 3px solid #000 !important;
+  border-left: none !important;
+  border-right: none !important;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+}
+
+/* Première cellule d'unité : bordure gauche */
+.schedule-table tbody tr.current-day-row td.schedule-col-unit:first-of-type {
+  border-left: 3px solid #000 !important;
+}
+
+/* Dernière cellule d'unité : bordure droite */
+.schedule-table tbody tr.current-day-row td.schedule-col-unit:last-of-type {
+  border-right: 3px solid #000 !important;
+}
+
+/* La colonne jour garde sa couleur avec bordure identique */
+.schedule-table tbody tr.current-day-row td.schedule-col-label {
+  border-top: 3px solid #000 !important;
+  border-bottom: 3px solid #000 !important;
+  border-left: none !important;
+  border-right: none !important;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+}
+
+/* Ne PAS toucher à la colonne fournisseur */
+.schedule-table tbody tr.current-day-row td.col-Fournisseur {
+  /* Aucun style ajouté - garde son style normal */
+}
+
+/* Enlever les bordures sur les cellules d'unités NON sélectionnées */
+.schedule-table tbody tr:not(.current-day-row) td.schedule-col-unit {
+  border: none;
+  border-left: 1px solid #ddd; /* Juste une ligne fine à gauche pour séparer */
+}
+
+/* Colonnes d'unités */
+.schedule-col-unit {
+  min-width: 80px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.schedule-col-unit + .schedule-col-unit {
+  border-left-width: 2px;
+}
