@@ -13,18 +13,81 @@ export default function TruckTable() {
   const pausedRef = useRef(false);
 
   // Charger truck_status.csv
-  useEffect(() => {
-    async function loadStatus() {
-      try {
-        const res = await fetch("/truck_status.csv", { cache: "no-store" });
-        const text = await res.text();
-        const lm = res.headers.get("Last-Modified");
-        setLastUpdated(lm ? new Date(lm) : new Date());
+ useEffect(() => {
+  async function loadStatus() {
+    try {
+      const timestamp = Date.now();
+      const res = await fetch(`https://raw.githubusercontent.com/WidoomVil/suivis_truck/main/truck_status.csv?t=${timestamp}`, {
+        cache: "no-store",
+        headers: { 'Cache-Control': 'no-cache, no-store, must-revalidate' }
+      });
+      
+      const text = await res.text();
+      const lm = res.headers.get("Last-Modified");
+      setLastUpdated(lm ? new Date(lm) : new Date());
 
-        const clean = text.replace(/^\uFEFF/, "");
-        const lines = clean.split(/\r?\n/).filter((l) => l.trim().length > 0);
-        if (!lines.length) return;
+      const clean = text.replace(/^\uFEFF/, "");
+      const lines = clean.split(/\r?\n/).filter((l) => l.trim().length > 0);
+      if (!lines.length) return;
 
+      const headers = lines[0].split(";").map(h => h.trim());
+      const data = lines.slice(1).map(line => {
+        const cells = line.split(";");
+        const obj = {};
+        headers.forEach((h, i) => obj[h] = (cells[i] ?? "").trim());
+        return obj;
+      });
+
+      const mapped = data.map(mapRow)
+        .filter(r => Object.values(r).some(v => (v ?? "").toString().trim() !== ""));
+      setRows(mapped);
+    } catch (e) {
+      setError("Impossible de charger le CSV statut");
+      console.error(e);
+    }
+  }
+  loadStatus();
+}, []);
+
+  // Charger schedule.csv
+useEffect(() => {
+  async function loadSchedule() {
+    try {
+      const timestamp = Date.now();
+      const res = await fetch(`https://raw.githubusercontent.com/WidoomVil/suivis_truck/main/schedule.csv?t=${timestamp}`, {
+        cache: "no-store",
+        headers: { 'Cache-Control': 'no-cache, no-store, must-revalidate' }
+      });
+      
+      if (!res.ok) return;
+      const text = await res.text();
+      const parsed = parseScheduleText(text);
+      setScheduleParsed(parsed);
+    } catch (e) {
+      console.error("Impossible de charger schedule.csv", e);
+    }
+  }
+  loadSchedule();
+}, []);
+
+  // Auto-refresh toutes les 30 secondes
+useEffect(() => {
+  const loadData = async () => {
+    try {
+      const timestamp = Date.now();
+      
+      // Reload truck_status
+      const resStatus = await fetch(`https://raw.githubusercontent.com/WidoomVil/suivis_truck/main/truck_status.csv?t=${timestamp}`, {
+        cache: "no-store",
+        headers: { 'Cache-Control': 'no-cache, no-store, must-revalidate' }
+      });
+      
+      const textStatus = await resStatus.text();
+      setLastUpdated(new Date());
+      
+      const clean = textStatus.replace(/^\uFEFF/, "");
+      const lines = clean.split(/\r?\n/).filter((l) => l.trim().length > 0);
+      if (lines.length) {
         const headers = lines[0].split(";").map(h => h.trim());
         const data = lines.slice(1).map(line => {
           const cells = line.split(";");
@@ -32,33 +95,33 @@ export default function TruckTable() {
           headers.forEach((h, i) => obj[h] = (cells[i] ?? "").trim());
           return obj;
         });
-
         const mapped = data.map(mapRow)
           .filter(r => Object.values(r).some(v => (v ?? "").toString().trim() !== ""));
         setRows(mapped);
-      } catch (e) {
-        setError("Impossible de charger le CSV statut");
-        console.error(e);
       }
-    }
-    loadStatus();
-  }, []);
-
-  // Charger schedule.csv
-  useEffect(() => {
-    async function loadSchedule() {
-      try {
-        const res = await fetch("/schedule.csv", { cache: "no-store" });
-        if (!res.ok) return;
-        const text = await res.text();
-        const parsed = parseScheduleText(text);
+      
+      // Reload schedule
+      const resSchedule = await fetch(`https://raw.githubusercontent.com/WidoomVil/suivis_truck/main/schedule.csv?t=${timestamp}`, {
+        cache: "no-store",
+        headers: { 'Cache-Control': 'no-cache, no-store, must-revalidate' }
+      });
+      
+      if (resSchedule.ok) {
+        const textSchedule = await resSchedule.text();
+        const parsed = parseScheduleText(textSchedule);
         setScheduleParsed(parsed);
-      } catch (e) {
-        console.error("Impossible de charger schedule.csv", e);
       }
+      
+      console.log('🔄 Données rechargées:', new Date().toLocaleTimeString());
+    } catch (e) {
+      console.error('Erreur refresh:', e);
     }
-    loadSchedule();
-  }, []);
+  };
+  
+  const interval = setInterval(loadData, 30000); // 30 secondes
+  
+  return () => clearInterval(interval);
+}, []);
 
   const statusSections = useMemo(() => buildStatusSections(rows), [rows]);
   const hasSchedule =
