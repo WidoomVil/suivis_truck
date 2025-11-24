@@ -1,46 +1,46 @@
 ﻿Unité;DATE;PLAINTE;DATE RÉPARATION;GARAGE;COMPLÉTÉE;PROCHAIN RENDEZ-VOUS;DISPONIBLE;NOTE
-RO0325Z;29-oct;toile dechirer, levier bodyvalve jam, ;;;;;oui;
+RO0325Z;29-oct;toile dechirer, levier bodyvalve jam, ;25-nov;Villeco;;;oui;
 RO0424;30-oct;mirroir droite casser, res.urée suinte;;;;;oui;
-RO0524Z;;;;;;;oui;wire=5brin
+RO0524Z;24-nov;cb n/f;;;;;oui;wire=5brin
 RO0624;;;;;;;oui;
-RO0724Z;08-sept;PTO fait du bruit lorsque la pompe force vers la fin de la monter;;;;;oui;Bras gauche tordu, tire a droite=alignement,Bumper déchirer
+RO0724Z;;;;;;;oui;Bras gauche tordu, tire a droite=alignement,Bumper déchirer
 RO0825;;;;;;;oui;
 RO0925;;;;;;;oui;
 RO1020;;;;;;;oui;
-RO1320Z;24-sept;wire 2 brin de sauter, trou bonhomme a refaire;;;;;oui;RDV Chantal reporter en nov
+RO1320Z;;Changement d'huile transmission;;;;;oui;
 RO1421;;;;;;;oui;
 RO1520;;;;;;;oui;
 RO1620Z;;;;;;;oui;
 RO1720;31-oct;petit mourroir gauche casser, mauvais rim sur direction ;;;;;oui;Cylindre du hoist coule 
-CA1920;;;;;;;oui;coffre manquant depuis 3 ans 
+CA1920;;;25-nov;Pose coffre ;;;oui;
 CA2021;;;;;;;oui;Block heater n/f
-CA2120;18-nov;Camera toit saute ;;;;;oui;
-CA2222;22-sept;Cylindre fourche cote droit;;;;;non;
+CA2120;;;;;;;oui;
+CA2222;22-sept;Cylindre fourche cote droit;;;;;oui;Coffre défoncer 21nov
 CA2321;;;;;;;non;
 CA2421;;;;;;;oui;
-CA2522;11-nov;suintage gauge a l'huile hydraulique, 4x Flasher arriere juste strobe, flasher labrie coté droit;;;;;oui;Va manquer la oneway et kinpin
+CA2522;11-nov; 4x Flasher arriere juste strobe, flasher labrie coté droit;24-nov;Labrie;;;oui;Va manquer la oneway et kinpin
 CA2622;18-nov;Marker light benne gauche ;;;;;oui;
 CA2722;;;;;;;oui;
 CA2822;;;;;;;oui;
 CA2922;;Accident;;;;;non;
-CA3023;;;;;;;oui;
-CA3124;18-nov;2e essieux a changer;;;;;oui;En attente des mesure des autres pneus 
+CA3023;24-nov;Work lamp 2x n/f;;;;;oui;
+CA3124;;;;;;;oui;
 CA3225;;;;;;;oui;
-LA4024;;Pneu 1er diff gauche/droite interieur a changer ;;;;;oui;
+LA4024;;;;;;;oui;
 LA4124;;devant benne renfoncer ;;;;;oui;
 LA4224;;;;;;;oui;
-LA4324;;;;;;;oui;
+LA4324;24-nov;Strobe et toit pucké;;;;;oui;
 LA4424;;Accident;;;;;non;
-LA4524;16-oct;pneu sens de rotation mauvais 2e diff gauche,contrôle porte gauche. ;;;;;oui;
+LA4524;;;;;;;oui;
 LA4624;;;;;;;oui;
-LA58;;;;;;;oui;
+LA51;;Check eng intermittent/fuel coupe;;;;;oui;Intermittent comme le LA59
+LA52;05-nov;Presse lente (pas au fond) doit donner du fuel. Wipper mauvais contact ? Check eng intermittent/fuel coupe;;;;;oui;Le bras lent , et le doigt ferme pas intermittent. 
+LA53;;;;;;;oui;
+LA54;;;;;;;oui;
+LA58;;Check eng intermittent/fuel coupe;;;;;oui;Intermittent comme le LA59
 LA59;05-nov;Presse lente (pas au fond) doit donner du fuel. Wipper mauvais contact ? Check eng intermittent/fuel coupe;;;;;oui;Le bras lent , et le doigt ferme pas intermittent. 
-LA100;;;;;;;oui;
-LA101;;;;;;;oui;
-LA102;;;;;;;oui;
-LA103;;;;;;;oui;
-LA104;;;;;;;oui;
-TR9022;29-oct;back alarm ne fonctionne pas ;;;;;oui;Mudflap style fast clip commander 2x semaine de livraison
+LA102;24-nov;Pince marche plus ;;;;;non;
+TR9022;;;;;;;oui;
 TR9224;;;;;;;oui;
 PM9121;;;;;;;oui;
 PM9223;;;;;;;oui;
@@ -49,4 +49,3 @@ CR96;;;;;;;oui;
 CR97;;;;;;;oui;
 CR98;;;;;;;oui;
 CR99;;;;;;;oui;
-CR100;;;;;;;oui;
