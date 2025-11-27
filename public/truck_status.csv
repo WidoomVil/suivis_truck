@@ -5,22 +5,22 @@ RO0524Z;24-nov;cb n/f;;;;;oui;wire=5brin
 RO0624;;;;;;;oui;
 RO0724Z;;;;;;;oui;Bras gauche tordu, tire a droite=alignement,Bumper déchirer
 RO0825;;;;;;;oui;
-RO0925;;;;;;;oui;
+RO0925;26-nov;Wire a 4-5brin de casser;;;;;oui;
 RO1020;;;;;;;oui;
 RO1320Z;;Changement d'huile transmission;;;;;oui;
 RO1421;;;;;;;oui;
 RO1520;;;;;;;oui;
 RO1620Z;;;;;;;oui;
 RO1720;31-oct;petit mourroir gauche casser, mauvais rim sur direction ;;;;;oui;Cylindre du hoist coule 
-CA1920;;;25-nov;Pose coffre ;;;oui;
+CA1920;;;;;;;oui;
 CA2021;;;;;;;oui;Block heater n/f
 CA2120;;;;;;;oui;
 CA2222;22-sept;Cylindre fourche cote droit;;;;;oui;Coffre défoncer 21nov
 CA2321;;;;;;;non;
 CA2421;;;;;;;oui;
-CA2522;11-nov; 4x Flasher arriere juste strobe, flasher labrie coté droit;24-nov;Labrie;;;oui;Va manquer la oneway et kinpin
+CA2522;;;;;;;oui;Va manquer la oneway et kinpin
 CA2622;18-nov;Marker light benne gauche ;;;;;oui;
-CA2722;;;;;;;oui;
+CA2722;24-nov;Suinte sur filtre visé hydraulique/œil bœuf gauche fendu;;;;;oui;
 CA2822;;;;;;;oui;
 CA2922;;Accident;;;;;non;
 CA3023;24-nov;Work lamp 2x n/f;;;;;oui;
@@ -29,12 +29,12 @@ CA3225;;;;;;;oui;
 LA4024;;;;;;;oui;
 LA4124;;devant benne renfoncer ;;;;;oui;
 LA4224;;;;;;;oui;
-LA4324;24-nov;Strobe et toit pucké;;;;;oui;
+LA4324;;;;;;;oui;
 LA4424;;Accident;;;;;non;
 LA4524;;;;;;;oui;
 LA4624;;;;;;;oui;
-LA51;;Check eng intermittent/fuel coupe;;;;;oui;Intermittent comme le LA59
-LA52;05-nov;Presse lente (pas au fond) doit donner du fuel. Wipper mauvais contact ? Check eng intermittent/fuel coupe;;;;;oui;Le bras lent , et le doigt ferme pas intermittent. 
+LA51;;;;;;;oui;
+LA52;;;;;;;oui;
 LA53;;;;;;;oui;
 LA54;;;;;;;oui;
 LA58;;Check eng intermittent/fuel coupe;;;;;oui;Intermittent comme le LA59
