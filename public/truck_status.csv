@@ -8,11 +8,11 @@ RO0825;;;;;;;oui;
 RO0925;;;;;;;oui;
 RO1020;;;;;;;oui;
 RO1320Z;;;;;;;oui;
-RO1421;;;;;;;oui;
+RO1421;8-dec;block heater non fonctionnel ;;;;;oui;
 RO1520;;;;;;;oui;
 RO1620Z;;;;;;;oui;
 RO1720;5-Dec;petit mirroir gauche casser + début de toile dechirer;;;;;oui;Cylindre du hoist coule 
-CA1920;;;;;;;oui;
+CA1920;8-dec;proxy arracher porte benne ;;;;;oui;
 CA2021;;;;;;;oui;Block heater n/f
 CA2120;;;;;;;oui;
 CA2222;22-sept;Cylindre fourche cote droit;;;;;oui;Coffre défoncer 21nov
@@ -26,13 +26,13 @@ CA2922;;Accident;;;;;non;
 CA3023;24-nov;Work lamp 2x n/f;;;;;oui;
 CA3124;;;;;;;oui;
 CA3225;;;;;;;oui;
-LA4024;;;;;;;oui;
+LA4024;8-dec;bracket de hose croche (bras);;;;;oui;
 LA4124;;devant benne renfoncer ;;;;;oui;
 LA4224;;;;;;;oui;
 LA4324;;;;;;;oui;
 LA4424;;Accident;;;;;non;
 LA4524;;;;;;;oui;
-LA4624;5dec;parrebrise a changer ;;;;;oui;
+LA4624;;;;;;;oui;
 LA51;;;;;;;oui;
 LA52;;;;;;;oui;
 LA53;;;;;;;oui;
