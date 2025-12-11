@@ -7,16 +7,16 @@ RO0724Z;;;;;;;oui;Bras gauche tordu, tire a droite=alignement,Bumper déchirer
 RO0825;;;;;;;oui;
 RO0925;;;;;;;oui;
 RO1020;;;;;;;oui;
-RO1320Z;;;;;;;oui;
-RO1421;8-dec;block heater non fonctionnel ;;;;;oui;
+RO1320Z;8-dec;Toile dechiré;;;;;oui;
+RO1421;;;;;;;oui;
 RO1520;;;;;;;oui;
 RO1620Z;;;;;;;oui;
-RO1720;5-Dec;petit mirroir gauche casser + début de toile dechirer;;;;;oui;Cylindre du hoist coule 
-CA1920;8-dec;proxy arracher porte benne ;;;;;oui;
+RO1720;5-Dec; début de toile dechirer;;;;;oui;Cylindre du hoist coule 
+CA1920;;;;;;;oui;
 CA2021;;;;;;;oui;Block heater n/f
 CA2120;;;;;;;oui;
 CA2222;22-sept;Cylindre fourche cote droit;;;;;oui;Coffre défoncer 21nov
-CA2321;;;;;;;non;
+CA2321;;;;;;;oui;
 CA2421;;;;;;;oui;
 CA2522;;;;;;;oui;Va manquer la oneway et kinpin
 CA2622;18-nov;Marker light benne gauche ;;;;;oui;
@@ -37,9 +37,8 @@ LA51;;;;;;;oui;
 LA52;;;;;;;oui;
 LA53;;;;;;;oui;
 LA54;;;;;;;oui;
-LA58;;Check eng intermittent/fuel coupe;;;;;oui;Intermittent comme le LA59
+LA58;;;;;;;oui;
 LA59;5-dec;Pu de chauffage;;;;;oui;
-LA102;;;;;;;non;
 TR9022;;;;;;;oui;
 TR9224;;;;;;;oui;
 PM9121;;;;;;;oui;
