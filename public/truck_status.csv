@@ -8,7 +8,7 @@ RO0825;;;;;;;oui;
 RO0925;;;;;;;oui;
 RO1020;;;;;;;oui;
 RO1320Z;8-dec;Toile dechiré;;;;;oui;
-RO1421;;;;;;;oui;
+RO1421;18-dec;senteur de gaz lorsque regen+verifier support  a toile;;;;;oui;
 RO1520;;;;;;;oui;
 RO1620Z;;;;;;;oui;
 RO1720;5-Dec; début de toile dechirer;;;;;oui;Cylindre du hoist coule 
@@ -20,7 +20,7 @@ CA2321;;;;;;;oui;
 CA2421;;;;;;;oui;
 CA2522;;;;;;;oui;Va manquer la oneway et kinpin
 CA2622;18-nov;Marker light benne gauche ;;;;;oui;
-CA2722;24-nov;Suinte sur filtre visé hydraulique/œil bœuf gauche fendu;;;;;oui;Wiper saccader ?
+CA2722;24-nov;Suinte sur filtre visé hydraulique/œil bœuf gauche fendu/lumiere droite /bloc heater;;;;;oui;Wiper saccader ?
 CA2822;;;;;;;oui;
 CA2922;;Accident;;;;;non;
 CA3023;24-nov;Work lamp 2x n/f;;;;;oui;
